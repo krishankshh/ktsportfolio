@@ -51,8 +51,8 @@ export default function Avatar3D() {
       {/* Your 3D Model */}
       <primitive
         object={scene}
-        scale={2}
-        position={[0, -1, 0]}
+        scale={3}
+        position={[0, -3, 0]}
       />
 
       {/* Optional: Floating particles around avatar */}
