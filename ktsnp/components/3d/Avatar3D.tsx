@@ -71,8 +71,7 @@ function FloatingParticle({ index }: { index: number }) {
       meshRef.current.position.x = Math.cos(time * 0.8 + angle) * radius;
       meshRef.current.position.y = Math.sin(time * 0.6) * 0.8 + 0.3;
       meshRef.current.position.z = Math.sin(time * 0.8 + angle) * radius;
-      meshRef.current.rotation.x += 0.02;
-      meshRef.current.rotation.y += 0.02;
+      // Particle rotation removed
     }
   });
 

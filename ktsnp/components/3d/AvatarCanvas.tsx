@@ -35,13 +35,11 @@ export default function AvatarCanvas() {
           <Avatar3D />
         </Suspense>
 
-        {/* Controls - allows user to rotate view */}
+        {/* Controls - disabled */}
         <OrbitControls
+          enableRotate={false}
           enableZoom={false}
           enablePan={false}
-          minPolarAngle={Math.PI / 3}
-          maxPolarAngle={Math.PI / 1.5}
-          dampingFactor={0.05}
         />
       </Canvas>
     </div>
