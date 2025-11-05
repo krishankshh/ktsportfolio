@@ -41,8 +41,6 @@ export default function AvatarCanvas() {
           enablePan={false}
           minPolarAngle={Math.PI / 3}
           maxPolarAngle={Math.PI / 1.5}
-          autoRotate
-          autoRotateSpeed={1.5}
           dampingFactor={0.05}
         />
       </Canvas>

@@ -32,17 +32,13 @@ export default function Avatar3D() {
     }
   }, [actions, fbx.animations]);
 
-  // Animate the avatar group (mouse tracking and floating)
-  useFrame(({ clock, mouse }) => {
+  // Animate the avatar group (floating animation only)
+  useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
 
     if (groupRef.current) {
       // Gentle floating animation
       groupRef.current.position.y = Math.sin(t * 0.8) * 0.2;
-
-      // Follow mouse movement subtly
-      groupRef.current.rotation.y = mouse.x * 0.3;
-      groupRef.current.rotation.x = -mouse.y * 0.2;
     }
   });
 
