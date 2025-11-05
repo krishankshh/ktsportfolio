@@ -1,0 +1,17 @@
+[build]
+  # The directory where your Next.js app is located
+  base = "ktsnp/"
+
+  # Build command
+  command = "npm run build"
+
+  # Publish directory (for Next.js, use .next)
+  publish = ".next"
+
+# Environment variables
+[build.environment]
+  NODE_VERSION = "20"
+
+# Next.js Runtime Plugin
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
