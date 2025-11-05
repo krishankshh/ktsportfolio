@@ -3,6 +3,17 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin } from "lucide-react";
 import { PERSONAL_INFO } from "@/lib/constants";
+import dynamic from "next/dynamic";
+
+// Dynamically import 3D avatar to avoid SSR issues
+const AvatarCanvas = dynamic(() => import("@/components/3d/AvatarCanvas"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="w-16 h-16 border-4 border-accent/30 border-t-accent rounded-full animate-spin" />
+    </div>
+  ),
+});
 
 export default function Hero() {
   const words = ["Developer", "Designer", "Problem Solver"];
@@ -10,7 +21,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center px-6 relative"
+      className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden"
     >
       {/* Background Grid */}
       <div className="absolute inset-0 -z-10 opacity-[0.03]">
@@ -24,12 +35,13 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-4xl mx-auto text-center">
-        {/* Main Content */}
+      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
+        {/* Content Section - Left Column */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
+          className="text-center lg:text-left"
         >
           {/* Availability Badge */}
           <motion.div
@@ -47,7 +59,7 @@ export default function Hero() {
 
           {/* Name */}
           <motion.h1
-            className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -67,7 +79,7 @@ export default function Hero() {
 
           {/* Bio */}
           <motion.p
-            className="text-base md:text-lg text-secondary max-w-2xl mx-auto mb-12 leading-relaxed"
+            className="text-base md:text-lg text-secondary mb-12 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
@@ -77,7 +89,7 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-wrap items-center justify-center gap-4"
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
@@ -100,7 +112,7 @@ export default function Hero() {
 
           {/* Social Links */}
           <motion.div
-            className="flex items-center justify-center gap-6 mt-12"
+            className="flex items-center justify-center lg:justify-start gap-6 mt-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
@@ -126,21 +138,32 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
+        {/* 3D Avatar Section - Right Column */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{
-            opacity: { delay: 1 },
-            y: { repeat: Infinity, duration: 1.5, ease: "easeInOut" },
-          }}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="hidden lg:block h-[600px] relative"
         >
-          <a href="#work" className="text-secondary hover:text-foreground transition-colors">
-            <ArrowDown size={24} />
-          </a>
+          <AvatarCanvas />
         </motion.div>
+
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 10, 0] }}
+        transition={{
+          opacity: { delay: 1 },
+          y: { repeat: Infinity, duration: 1.5, ease: "easeInOut" },
+        }}
+      >
+        <a href="#about" className="text-secondary hover:text-foreground transition-colors">
+          <ArrowDown size={24} />
+        </a>
+      </motion.div>
     </section>
   );
 }
