@@ -11,18 +11,21 @@ export default function Avatar3D() {
 
   // Animate the avatar
   useFrame(({ clock, mouse }) => {
-    if (groupRef.current) {
-      // Gentle floating animation
-      groupRef.current.position.y = Math.sin(clock.getElapsedTime() * 0.5) * 0.2;
+    const t = clock.getElapsedTime();
 
-      // Follow mouse movement subtly
-      groupRef.current.rotation.y = mouse.x * 0.3;
-      groupRef.current.rotation.x = -mouse.y * 0.2;
+    if (groupRef.current) {
+      // More visible floating animation
+      groupRef.current.position.y = Math.sin(t * 0.8) * 0.4;
+
+      // Follow mouse movement more visibly
+      groupRef.current.rotation.y = mouse.x * 0.5;
+      groupRef.current.rotation.x = -mouse.y * 0.3;
     }
 
     if (headRef.current) {
-      // Add a subtle head rotation
-      headRef.current.rotation.y = Math.sin(clock.getElapsedTime() * 0.3) * 0.1;
+      // More visible head rotation
+      headRef.current.rotation.y = Math.sin(t * 0.6) * 0.3;
+      headRef.current.rotation.z = Math.cos(t * 0.4) * 0.1;
     }
   });
 
@@ -33,8 +36,8 @@ export default function Avatar3D() {
         <MeshDistortMaterial
           color="#3b82f6"
           attach="material"
-          distort={0.3}
-          speed={2}
+          distort={0.5}
+          speed={3}
           roughness={0.2}
           metalness={0.8}
         />
@@ -82,28 +85,28 @@ export default function Avatar3D() {
 function FloatingParticle({ index }: { index: number }) {
   const meshRef = useRef<THREE.Mesh>(null);
   const angle = (index / 8) * Math.PI * 2;
-  const radius = 2;
+  const radius = 2.5;
 
   useFrame(({ clock }) => {
     if (meshRef.current) {
       const time = clock.getElapsedTime() + index;
-      meshRef.current.position.x = Math.cos(time * 0.5 + angle) * radius;
-      meshRef.current.position.y = Math.sin(time * 0.3) * 0.5 + 0.5;
-      meshRef.current.position.z = Math.sin(time * 0.5 + angle) * radius;
-      meshRef.current.rotation.x += 0.01;
-      meshRef.current.rotation.y += 0.01;
+      meshRef.current.position.x = Math.cos(time * 0.8 + angle) * radius;
+      meshRef.current.position.y = Math.sin(time * 0.6) * 0.8 + 0.3;
+      meshRef.current.position.z = Math.sin(time * 0.8 + angle) * radius;
+      meshRef.current.rotation.x += 0.02;
+      meshRef.current.rotation.y += 0.02;
     }
   });
 
   return (
     <mesh ref={meshRef}>
-      <boxGeometry args={[0.1, 0.1, 0.1]} />
+      <boxGeometry args={[0.15, 0.15, 0.15]} />
       <meshStandardMaterial
         color="#3b82f6"
         emissive="#3b82f6"
-        emissiveIntensity={0.5}
+        emissiveIntensity={0.8}
         transparent
-        opacity={0.6}
+        opacity={0.7}
       />
     </mesh>
   );
