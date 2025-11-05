@@ -69,7 +69,7 @@ export default function AlgorithmShowcase() {
 
         {/* Algorithm Info */}
         <motion.div
-          key={activeAlgorithm}
+          key={`info-${activeAlgorithm}`}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-6 p-4 bg-background/50 rounded-lg border border-border"
@@ -81,7 +81,7 @@ export default function AlgorithmShowcase() {
 
         {/* Visualizer */}
         <motion.div
-          key={activeAlgorithm}
+          key={`viz-${activeAlgorithm}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
