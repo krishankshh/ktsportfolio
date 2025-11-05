@@ -89,8 +89,164 @@ export const ESSENTIAL_ALGORITHMS = {
   },
 };
 
+export const ABOUT = {
+  title: "About Me",
+  story: [
+    "I'm a Mechanical and Mechatronics Engineering student with a unique blend of mechanical engineering knowledge and IT expertise. After completing my diploma in Information Technology, I discovered my passion for creating digital solutions that solve real-world problems.",
+    "My journey into software development started with curiosity about automation and evolved into a deep commitment to mastering web technologies, algorithms, and user experience design. I believe in writing clean, efficient code and creating applications that make a difference.",
+    "Beyond coding, I enjoy teaching programming concepts to others, working on AI projects, and continuously expanding my skill set. I'm driven by the challenge of turning complex problems into elegant, user-friendly solutions."
+  ],
+  highlights: [
+    { label: "Experience", value: "3+ Years" },
+    { label: "Projects Completed", value: "50+" },
+    { label: "Happy Clients", value: "30+" },
+    { label: "Technologies Mastered", value: "20+" },
+  ]
+};
+
+export const EXPERIENCE = [
+  {
+    title: "Freelance Web Developer",
+    company: "Self-Employed",
+    location: "Remote",
+    period: "2022 - Present",
+    description: "Building custom websites and web applications for clients across various industries. Specializing in responsive design, e-commerce solutions, and modern web technologies.",
+    achievements: [
+      "Delivered 30+ successful projects for clients worldwide",
+      "Maintained 98% client satisfaction rate",
+      "Specialized in React/Next.js and modern web stack",
+    ],
+    technologies: ["React", "Next.js", "Node.js", "MongoDB", "Tailwind CSS"]
+  },
+  {
+    title: "Programming Instructor",
+    company: "Various Institutions",
+    location: "India",
+    period: "2021 - 2022",
+    description: "Taught programming fundamentals including Python and Java to students. Developed curriculum and hands-on projects to help students grasp core concepts.",
+    achievements: [
+      "Taught 100+ students programming fundamentals",
+      "Created interactive learning materials and projects",
+      "Received excellent feedback for clear explanations",
+    ],
+    technologies: ["Python", "Java", "Data Structures", "Algorithms"]
+  },
+  {
+    title: "IT Support & Solutions",
+    company: "Local Businesses",
+    location: "India",
+    period: "2020 - 2021",
+    description: "Provided IT support services including website development, system setup, and technical troubleshooting for small businesses and startups.",
+    achievements: [
+      "Helped 15+ businesses establish online presence",
+      "Reduced technical issues through proactive maintenance",
+      "Implemented cost-effective IT solutions",
+    ],
+    technologies: ["WordPress", "HTML/CSS", "JavaScript", "SEO"]
+  },
+];
+
+export const EDUCATION = [
+  {
+    degree: "Bachelor of Engineering",
+    field: "Mechanical & Mechatronics Engineering",
+    institution: "University Name", // Update with your university
+    location: "India",
+    period: "2020 - Present",
+    description: "Specializing in mechatronics with focus on automation, robotics, and control systems. Combining mechanical engineering principles with programming and electronics.",
+    achievements: [
+      "Strong foundation in physics, mathematics, and engineering principles",
+      "Experience with CAD software and engineering design",
+      "Coursework in automation and control systems",
+    ]
+  },
+  {
+    degree: "Diploma",
+    field: "Information Technology",
+    institution: "IT Institute", // Update with your institute
+    location: "India",
+    period: "2018 - 2020",
+    description: "Comprehensive study of computer science fundamentals, programming, databases, and web development.",
+    achievements: [
+      "Graduated with distinction",
+      "Built multiple academic projects",
+      "Strong foundation in programming and algorithms",
+    ]
+  },
+];
+
+export const CERTIFICATIONS = [
+  "Python Programming",
+  "Java Development",
+  "Web Development",
+  "Data Structures & Algorithms",
+  "UI/UX Design Fundamentals",
+  // Add your actual certifications here
+];
+
+export const PROJECTS = [
+  {
+    title: "E-Commerce Platform",
+    description: "A full-featured e-commerce web application with product catalog, shopping cart, payment integration, and admin dashboard.",
+    longDescription: "Built a complete e-commerce solution from scratch with user authentication, product management, order processing, and payment gateway integration. Focused on performance optimization and user experience.",
+    technologies: ["Next.js", "React", "Node.js", "MongoDB", "Stripe"],
+    features: [
+      "User authentication & authorization",
+      "Product search and filtering",
+      "Shopping cart & checkout flow",
+      "Payment gateway integration",
+      "Admin dashboard for inventory management",
+    ],
+    github: "https://github.com/krishankshh", // Update with actual links
+    demo: "#",
+    image: "/images/project-placeholder.jpg",
+    status: "Completed",
+    year: "2024"
+  },
+  {
+    title: "Task Management System",
+    description: "A collaborative task management application with real-time updates, team features, and project tracking.",
+    longDescription: "Developed a task management platform enabling teams to organize projects, assign tasks, set deadlines, and track progress in real-time.",
+    technologies: ["React", "Firebase", "Tailwind CSS", "Context API"],
+    features: [
+      "Real-time collaboration",
+      "Drag-and-drop task organization",
+      "Team member assignment",
+      "Progress tracking & analytics",
+      "Responsive design",
+    ],
+    github: "https://github.com/krishankshh",
+    demo: "#",
+    image: "/images/project-placeholder.jpg",
+    status: "Completed",
+    year: "2023"
+  },
+  {
+    title: "Portfolio Generator",
+    description: "A SaaS platform that helps developers create beautiful, professional portfolios in minutes with customizable templates.",
+    longDescription: "Built a portfolio generator tool that allows users to choose templates, customize content, and deploy their portfolio with one click.",
+    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Vercel"],
+    features: [
+      "Multiple portfolio templates",
+      "Real-time preview",
+      "One-click deployment",
+      "Custom domain support",
+      "SEO optimization",
+    ],
+    github: "https://github.com/krishankshh",
+    demo: "#",
+    image: "/images/project-placeholder.jpg",
+    status: "In Progress",
+    year: "2024"
+  },
+];
+
 export const NAVIGATION_ITEMS = [
   { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Experience", href: "#experience" },
+  { name: "Projects", href: "#projects" },
+  { name: "Education", href: "#education" },
   { name: "Algorithms", href: "#algorithms" },
   { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
