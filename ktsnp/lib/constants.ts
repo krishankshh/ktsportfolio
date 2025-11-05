@@ -247,7 +247,6 @@ export const NAVIGATION_ITEMS = [
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Education", href: "#education" },
-  { name: "Algorithms", href: "#algorithms" },
   { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
 ];
