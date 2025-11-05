@@ -32,15 +32,7 @@ export default function Avatar3D() {
     }
   }, [actions, fbx.animations]);
 
-  // Animate the avatar group (floating animation only)
-  useFrame(({ clock }) => {
-    const t = clock.getElapsedTime();
-
-    if (groupRef.current) {
-      // Gentle floating animation
-      groupRef.current.position.y = Math.sin(t * 0.8) * 0.2;
-    }
-  });
+  // No animations - completely static
 
   return (
     <group ref={groupRef}>
@@ -50,42 +42,7 @@ export default function Avatar3D() {
         scale={3}
         position={[0, -3, 0]}
       />
-
-      {/* Optional: Floating particles around avatar */}
-      {Array.from({ length: 8 }).map((_, i) => (
-        <FloatingParticle key={i} index={i} />
-      ))}
     </group>
-  );
-}
-
-// Floating particles component
-function FloatingParticle({ index }: { index: number }) {
-  const meshRef = useRef<THREE.Mesh>(null);
-  const angle = (index / 8) * Math.PI * 2;
-  const radius = 2.5;
-
-  useFrame(({ clock }) => {
-    if (meshRef.current) {
-      const time = clock.getElapsedTime() + index;
-      meshRef.current.position.x = Math.cos(time * 0.8 + angle) * radius;
-      meshRef.current.position.y = Math.sin(time * 0.6) * 0.8 + 0.3;
-      meshRef.current.position.z = Math.sin(time * 0.8 + angle) * radius;
-      // Particle rotation removed
-    }
-  });
-
-  return (
-    <mesh ref={meshRef}>
-      <boxGeometry args={[0.15, 0.15, 0.15]} />
-      <meshStandardMaterial
-        color="#3b82f6"
-        emissive="#3b82f6"
-        emissiveIntensity={0.8}
-        transparent
-        opacity={0.7}
-      />
-    </mesh>
   );
 }
 
