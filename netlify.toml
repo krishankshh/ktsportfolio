@@ -1,0 +1,24 @@
+[build]
+  # The directory where your Next.js app is located
+  base = "ktsnp/"
+
+  # Build command
+  command = "npm run build"
+
+  # Publish directory (for Next.js, use .next)
+  publish = ".next"
+
+# Environment variables
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_VERSION = "10"
+  # Use Ubuntu Noble (24.04) build image
+  AWS_LAMBDA_JS_RUNTIME = "nodejs20.x"
+
+# Context-specific settings (optional)
+[context.production]
+  environment = { NODE_VERSION = "20" }
+
+# Next.js Runtime Plugin
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
