@@ -138,12 +138,12 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* 3D Avatar Section - Right Column */}
+        {/* 3D Avatar Section - Visible on all screens */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="hidden lg:block h-[500px] xl:h-[600px] relative"
+          className="h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] relative w-full"
         >
           <AvatarCanvas />
         </motion.div>
