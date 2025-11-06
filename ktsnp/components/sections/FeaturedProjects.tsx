@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, ExternalLink, CheckCircle, Clock } from "lucide-react";
+import Image from "next/image";
 import { PROJECTS } from "@/lib/constants";
 
 export default function FeaturedProjects() {
@@ -34,20 +35,30 @@ export default function FeaturedProjects() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
             >
-              {/* Project Image/Placeholder */}
+              {/* Project Image */}
               <div className="lg:w-1/2">
                 <motion.div
-                  className="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 border border-border group"
+                  className="relative aspect-video rounded-xl overflow-hidden bg-muted border border-border group"
                   whileHover={{ scale: 1.02 }}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-6xl mb-2">💻</div>
-                      <p className="text-sm text-secondary">
-                        {project.status === "Completed" ? "Live Project" : "In Development"}
-                      </p>
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-accent/20 to-accent/5">
+                      <div className="text-center">
+                        <div className="text-6xl mb-2">💻</div>
+                        <p className="text-sm text-secondary">
+                          {project.status === "Completed" ? "Live Project" : "In Development"}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  )}
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-accent/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                     <a
