@@ -6,13 +6,13 @@ import { useState } from "react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "RPM - ",
     description:
       "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
     image: "/images/project1.jpg",
     github: "#",
-    live: "#",
+    live: "https://rpm.kmats.in/",
     featured: true,
   },
   {
@@ -45,6 +45,7 @@ const projects = [
     live: "#",
     featured: false,
   },
+  
 ];
 
 export default function Projects() {
