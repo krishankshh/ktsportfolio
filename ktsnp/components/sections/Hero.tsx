@@ -1,0 +1,186 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowDown, Download, Github, Linkedin } from "lucide-react";
+import { PERSONAL_INFO } from "@/lib/constants";
+import dynamic from "next/dynamic";
+
+// Dynamically import 3D avatar to avoid SSR issues
+const AvatarCanvas = dynamic(() => import("@/components/3d/AvatarCanvas"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="w-16 h-16 border-4 border-accent/30 border-t-accent rounded-full animate-spin" />
+    </div>
+  ),
+});
+
+export default function Hero() {
+  const words = ["Developer", "Designer", "Problem Solver"];
+
+  return (
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 relative overflow-hidden"
+    >
+      {/* Background Grid */}
+      <div className="absolute inset-0 -z-10 opacity-[0.03]">
+        <div
+          className="h-full w-full"
+          style={{
+            backgroundImage: `linear-gradient(var(--border) 1px, transparent 1px),
+                             linear-gradient(90deg, var(--border) 1px, transparent 1px)`,
+            backgroundSize: "50px 50px",
+          }}
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        {/* Content Section - Left Column */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center lg:text-left"
+        >
+          {/* Availability Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-muted border border-border mb-6 sm:mb-8"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+            </span>
+            <span className="text-xs sm:text-sm text-secondary">Available for opportunities</span>
+          </motion.div>
+
+          {/* Name */}
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-4 sm:mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            {PERSONAL_INFO.name}
+          </motion.h1>
+
+          {/* Animated Role */}
+          <motion.div
+            className="text-lg sm:text-xl md:text-2xl text-secondary mb-6 sm:mb-8 min-h-[2rem]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            <AnimatedText words={words} />
+          </motion.div>
+
+          {/* Bio */}
+          <motion.p
+            className="text-sm sm:text-base md:text-lg text-secondary mb-8 sm:mb-12 leading-relaxed max-w-lg mx-auto lg:mx-0"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            {PERSONAL_INFO.bio}
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <a
+              href="#contact"
+              className="w-full sm:w-auto px-6 py-3 bg-foreground text-background rounded-lg hover:bg-foreground/90 transition-colors font-medium text-center"
+            >
+              Get in touch
+            </a>
+            <a
+              href="/files/KrishankShahResume.pdf"
+              download
+              className="w-full sm:w-auto px-6 py-3 bg-muted text-foreground rounded-lg hover:bg-border transition-colors font-medium inline-flex items-center justify-center gap-2"
+            >
+              <Download size={18} />
+              Resume
+            </a>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div
+            className="flex items-center justify-center lg:justify-start gap-6 mt-8 sm:mt-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+          >
+            <a
+              href={PERSONAL_INFO.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-foreground transition-colors"
+              aria-label="GitHub"
+            >
+              <Github size={20} />
+            </a>
+            <a
+              href={PERSONAL_INFO.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-foreground transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={20} />
+            </a>
+          </motion.div>
+        </motion.div>
+
+        {/* 3D Avatar Section - Visible on all screens */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] relative w-full"
+        >
+          <AvatarCanvas />
+        </motion.div>
+
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 10, 0] }}
+        transition={{
+          opacity: { delay: 1 },
+          y: { repeat: Infinity, duration: 1.5, ease: "easeInOut" },
+        }}
+      >
+        <a href="#about" className="text-secondary hover:text-foreground transition-colors">
+          <ArrowDown size={20} className="sm:w-6 sm:h-6" />
+        </a>
+      </motion.div>
+    </section>
+  );
+}
+
+// Animated text component for rotating words
+function AnimatedText({ words }: { words: string[] }) {
+  return (
+    <div className="inline-flex items-center gap-2">
+      <span className="text-foreground">I'm a</span>
+      <motion.span
+        key={words[0]}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-accent font-semibold"
+      >
+        {words[0]}
+      </motion.span>
+    </div>
+  );
+}
