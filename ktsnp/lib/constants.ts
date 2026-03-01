@@ -1,7 +1,7 @@
 export const PERSONAL_INFO = {
   name: "Krishank Shah",
   role: "Full-Stack Developer & Designer",
-  email: "krishankshh54@example.com", // Update with your email
+  email: "krishankshh54@gmail.com", // Update with your email
   github: "https://github.com/krishankshh",
   linkedin: "https://www.linkedin.com/in/krishank-shah-546989230/",
   twitter: "https://x.com/ShahKrisha20763",
@@ -135,7 +135,6 @@ export const PROJECTS = [
     longDescription: "FinHER is a comprehensive web platform designed to empower women entrepreneurs by providing a one-stop solution for accessing funding opportunities, financial literacy resources, AI-powered credit evaluation, and alternative financing channels. The platform also features an admin panel for managing content, ensuring that the ecosystem remains secure, up-to-date, and user-friendly.",
     technologies: ["Frontend : React + Bootstrap + Framer + Axios ", "Backend : Node.js + Express + MongoDB"],
     features: [
-      "Funding Requests Management",
       "Funding Requests Management",
       "Financial Literacy Resources",
       "Robust AI credit evaluation system",

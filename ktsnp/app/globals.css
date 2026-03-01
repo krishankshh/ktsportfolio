@@ -56,3 +56,16 @@ html {
   background-color: var(--accent);
   color: white;
 }
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Better touch targets on mobile */
+  button, a {
+    min-height: 44px;
+  }
+}
