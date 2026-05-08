@@ -13,21 +13,37 @@ export async function POST(request: Request) {
       );
     }
 
-    // Here you would typically:
-    // 1. Send email using a service like Resend, SendGrid, or Nodemailer
-    // 2. Store the message in a database
-    // 3. Send notification to yourself
+    // Proxy to Web3Forms
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: process.env.WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE",
+        name: name,
+        email: email,
+        message: message,
+        subject: `New Contact Form Submission from ${name}`,
+        from_name: "Ktsportfolio",
+      }),
+    });
 
-    // For now, we'll just log it and return success
-    console.log("Contact form submission:", { name, email, message });
+    const result = await response.json();
 
-    // Simulate processing delay
-    await new Promise((resolve) => setTimeout(resolve, 500));
-
-    return NextResponse.json(
-      { success: true, message: "Message received successfully" },
-      { status: 200 }
-    );
+    if (result.success) {
+      return NextResponse.json(
+        { success: true, message: "Message received successfully" },
+        { status: 200 }
+      );
+    } else {
+      console.error("Web3Forms error:", result);
+      return NextResponse.json(
+        { error: "Failed to send message" },
+        { status: 500 }
+      );
+    }
   } catch (error) {
     console.error("Contact form error:", error);
     return NextResponse.json(
