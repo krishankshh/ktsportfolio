@@ -18,21 +18,31 @@ export default function Contact() {
     setStatus("sending");
 
     try {
-      const response = await fetch("/api/contact", {
+      const formPayload = new FormData();
+      formPayload.append("access_key", "cd8d10f7-7865-41e7-90fc-e6ab00ed0668");
+      formPayload.append("name", formData.name);
+      formPayload.append("email", formData.email);
+      formPayload.append("message", formData.message);
+      formPayload.append("subject", `New Contact from ${formData.name}`);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: formPayload,
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (data.success) {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
         setTimeout(() => setStatus("idle"), 5000);
       } else {
+        console.error("Web3Forms error:", data);
         setStatus("error");
         setTimeout(() => setStatus("idle"), 5000);
       }
     } catch (error) {
+      console.error("Submission error:", error);
       setStatus("error");
       setTimeout(() => setStatus("idle"), 5000);
     }
