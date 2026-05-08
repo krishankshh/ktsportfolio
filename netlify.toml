@@ -1,0 +1,10 @@
+[build]
+  # The directory where the package.json and source code are located
+  base = "ktsnp"
+  
+  # The command to build the project
+  command = "npm run build"
+  
+  # The directory where the build output is generated
+  # For Next.js, this is typically .next
+  publish = ".next"
