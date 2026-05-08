@@ -31,7 +31,7 @@ export default function Experience() {
             <motion.div
               key={index}
               className={`relative mb-12 md:mb-16 ${
-                index % 2 === 0 ? "md:pr-1/2 md:text-right" : "md:pl-1/2 md:ml-auto"
+                index % 2 === 0 ? "md:pr-1/2" : "md:pl-1/2 md:ml-auto"
               }`}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}

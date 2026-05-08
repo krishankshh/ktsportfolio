@@ -27,7 +27,7 @@ export const ABOUT = {
     "Beyond coding, I enjoy teaching programming concepts to others, working on AI projects, and continuously expanding my skill set. I'm driven by the challenge of turning complex problems into elegant, user-friendly solutions."
   ],
   highlights: [
-    { label: "Experience", value: "1.5+ Years" },
+    { label: "Experience", value: "5+ Years" },
     { label: "Projects Completed", value: "20+" },
     { label: "Happy Clients", value: "10+" },
     { label: "Technologies Mastered", value: "20+" },
@@ -36,17 +36,31 @@ export const ABOUT = {
 
 export const EXPERIENCE = [
   {
-    title: "Content Uploader & Backend Developer",
-    company: "Ekeeda",
+    title: "Founder & CEO",
+    company: "KMATS",
     location: "Remote",
-    period: "Aug'21 - Sep'21",
-    description: " Uploading daily content that included MCQs. Managing my fellow interns to ensure that tasks were completed on time",
+    period: "Aug'24 - Present",
+    description: "Leading an AI-first innovation lab and software studio dedicated to building scalable digital ecosystems. Directing product vision and technical strategy for AI-native platforms that transform education, automation, and business infrastructure.",
     achievements: [
-      "Delivered 100+ successful and valuable MCQs",
-      "Maintained proper backend structure for content management",
-      "Specialized in ensuring timely content delivery",
+      "Conceptualized and launched RPM, an AI-powered educational platform designed for personalized, adaptive learning and skill-building.",
+      "Engineered sophisticated AI workflows and RAG-based systems to automate complex business processes and enhance user decision-making.",
+      "Orchestrated the technical and business roadmap for multiple AI-native products, scaling from concept to market-ready digital platforms.",
+      "Established a global brand presence and operational pipeline, positioning KMATS as a leader in innovation-led software development.",
     ],
-    technologies: ["HTML", "CSS", "JavaScript", "Content Management Systems"]
+    technologies: ["Next.js", "React", "Node.js", "AI/LLM Integration", "RAG Systems", "Automation Pipelines", "Scalable SaaS Architecture"]
+  },
+  {
+    title: "Game Developer | Blockchain | UI/UX Consultant",
+    company: "Neela Tele Films",
+    location: "India, Mumbai",
+    period: "Sep'23 - Dec'23",
+    description: "Developed engaging games and interactive experiences using Unity and C#. Integrated blockchain elements for in-game assets and provided UI/UX design consultation to enhance user engagement.",
+    achievements: [
+      "Developed 3+ interactive games with blockchain features",
+      "Integrated blockchain for secure in-game asset management",
+      "Provided UI/UX consultation leading to improved user engagement",
+    ],
+    technologies: ["C3P", "C#", "Blockchain Integration", "UI/UX Design", "Game Development", "Blender"]
   },
   {
     title: "Professor & Programming Instructor",
@@ -75,17 +89,17 @@ export const EXPERIENCE = [
     technologies: ["Python", "Java", "Problem Solving", "Debugging", "Project Management"]
   },
   {
-    title: "Game Developer | Blockchain | UI/UX Consultant",
-    company: "Neela Tele Films",
-    location: "India, Mumbai",
-    period: "Sep'23 - Dec'23",
-    description: "Developed engaging games and interactive experiences using Unity and C#. Integrated blockchain elements for in-game assets and provided UI/UX design consultation to enhance user engagement.",
+    title: "Content Uploader & Backend Developer",
+    company: "Ekeeda",
+    location: "Remote",
+    period: "Aug'21 - Sep'21",
+    description: " Uploading daily content that included MCQs. Managing my fellow interns to ensure that tasks were completed on time",
     achievements: [
-      "Developed 3+ interactive games with blockchain features",
-      "Integrated blockchain for secure in-game asset management",
-      "Provided UI/UX consultation leading to improved user engagement",
+      "Delivered 100+ successful and valuable MCQs",
+      "Maintained proper backend structure for content management",
+      "Specialized in ensuring timely content delivery",
     ],
-    technologies: ["C3P", "C#", "Blockchain Integration", "UI/UX Design", "Game Development", "Blender"]
+    technologies: ["HTML", "CSS", "JavaScript", "Content Management Systems"]
   },
 ];
 
@@ -130,60 +144,117 @@ export const CERTIFICATIONS = [
 
 export const PROJECTS = [
   {
-    title: "FinHER",
-   //escription: "A full-featured e-commerce web application with product catalog, shopping cart, payment integration, and admin dashboard.",
-    longDescription: "FinHER is a comprehensive web platform designed to empower women entrepreneurs by providing a one-stop solution for accessing funding opportunities, financial literacy resources, AI-powered credit evaluation, and alternative financing channels. The platform also features an admin panel for managing content, ensuring that the ecosystem remains secure, up-to-date, and user-friendly.",
-    technologies: ["Frontend : React + Bootstrap + Framer + Axios ", "Backend : Node.js + Express + MongoDB"],
+    title: "RPM - AI Personal Mentor",
+    description: "AI-powered educational platform with Gemini-powered ecosystem providing 24/7 conversational tutoring and structured learning journeys.",
+    longDescription: "RPM (Revolutionizing Personal Mentorship) is an AI-powered educational platform with Gemini-powered ecosystem providing 24/7 conversational tutoring, structured learning journeys, and comprehensive institutional management. It leverages advanced LLMs to provide personalized educational support at scale.",
+    technologies: ["React.js", "Flask", "MongoDB", "AWS", "Gemini AI"],
     features: [
-      "Funding Requests Management",
-      "Financial Literacy Resources",
-      "Robust AI credit evaluation system",
-      "Admin Panel for Content Management",
-      "Enhanced Security Measures",
-    ],
-    github: "https://github.com/krishankshh", // Update with actual links
-    demo: "https://finher.kmats.in/",
-    image: "/images/finher.jpg",
-    status: "Completed",
-    year: "2024"
-  },
-  {
-    title: "Automatic Stamping Machine UI",
-    //description: "A collaborative task management application with real-time updates, team features, and project tracking.",
-    longDescription: "An interactive Tkinter dashboard that simulates the control panel for an automated paper stamping machine. The interface visualizes production metrics in real time, provides manual control buttons, and exposes calibration utilities for the simulated laser sensor.",
-    technologies: ["Python", "Tkinter", "Matplotlib"],
-    features: [
-      "Live stamping simulation",
-      "Status indicators",
-      "Interactive history chart",
-      "Operational controls",
-      "System event logging",
-    ],
-    github: "https://github.com/krishankshh/Automatic-Stamping-Machine-UI",
-    demo: "#",
-    image: "/images/asm.jpg",
-    status: "Completed",
-    year: "2024"
-  },
-  {
-    title: "RPM - Learn Smarter With AI",
-    description: "A SaaS platform that helps everyone learn everything they want and upskill themselves using AI-powered personalized learning paths.",
-  longDescription: "A SaaS platform that helps everyone learn everything they want and upskill themselves using AI-powered personalized learning paths.",
-    technologies: ["Frontend: React 19 + Tailwind CSS + Vite", "Backend: Flask + MongoDB Atlas", "AI: OpenRouter API", "Auth: Google OAuth + JWT tokens"],
-    features: [
-      "Personalized learning paths",
-      "No age limitations",
-      "Easy-to-use interface",
-      "Easy Access to resources",
+      "24/7 AI Conversational Tutoring",
+      "Personalized Learning Paths",
+      "Institutional Management Dashboard",
+      "Resource Access Control",
       "AI-Powered Recommendations",
     ],
     github: "https://github.com/krishankshh",
     demo: "https://rpm.kmats.in/",
-    image: "/images/rpm.jpg",
+    image: "/images/rpm.png",
     status: "In Progress",
-    year: "2025"
+    year: "2025",
+    featured: true
   },
+  {
+    title: "Poki Studios - Creative Agency",
+    description: "High-performance creative agency website integrated with Builder.io for seamless visual content management.",
+    longDescription: "A high-performance React and Vite-based creative agency website integrated with Builder.io for seamless visual content management and brand storytelling. Features smooth animations and a premium dark-mode aesthetic.",
+    technologies: ["React.js", "Vite", "Framer Motion", "Builder.io", "CMS"],
+    features: [
+      "Visual CMS Integration",
+      "High Performance Animations",
+      "Dynamic Brand Storytelling",
+      "Responsive Modern UI",
+    ],
+    github: "https://github.com/krishankshh",
+    demo: "https://pokistudios.com", // Assuming kmats subdomain based on pattern
+    image: "/images/poki.png",
+    status: "Completed",
+    year: "2025",
+    featured: true
+  },
+  {
+    title: "Disinfect® - Healthcare",
+    description: "Hospital-grade Chlorine Dioxide (ClO2) disinfection technology platform trusted by leading healthcare facilities.",
+    longDescription: "A comprehensive digital platform for Disinfect®, showcasing patented ClO2 technology that eliminates 99.99% of pathogens. Features include product catalogs, application guides, and professional disinfection protocols for hospital environments.",
+    technologies: ["Next.js", "React", "Framer Motion", "Tailwind CSS", "SEO"],
+    features: [
+      "99.99% Pathogen Elimination",
+      "Patented ClO2 Technology",
+      "Rapid Fumigation Protocol",
+      "Regulatory Compliance Data",
+    ],
+    github: "https://github.com/krishankshh",
+    demo: "https://dis-infect.in/",
+    image: "/images/disinfect.png",
+    status: "Completed",
+    year: "2025",
+    featured: true
+  },
+
+  // {
+  //   title: "FinHER - Empowering Women",
+  //   description: "A comprehensive platform designed to empower women entrepreneurs with funding and financial literacy.",
+  //   longDescription: "FinHER is a comprehensive web platform designed to empower women entrepreneurs by providing a one-stop solution for accessing funding opportunities, financial literacy resources, and AI-powered credit evaluation.",
+  //   technologies: ["React", "Node.js", "Express", "MongoDB", "AI Evaluation"],
+  //   features: [
+  //     "Funding Request Management",
+  //     "AI Credit Evaluation",
+  //     "Financial Literacy Resources",
+  //     "Secure Admin Panel",
+  //   ],
+  //   github: "https://github.com/krishankshh",
+  //   demo: "https://finher.kmats.in/",
+  //   image: "/images/finher.jpg",
+  //   status: "Completed",
+  //   year: "2024",
+  //   featured: true
+  // },
+  {
+    title: "Chronicle - Social Media",
+    description: "College social media web app for students, professors, and parents interaction and collaboration.",
+    longDescription: "A full-featured social media platform built specifically for academic environments, allowing students, professors, and parents to interact, share resources, and collaborate on projects.",
+    technologies: ["JavaScript", "HTML", "CSS", "PHP", "MySQL"],
+    features: [
+      "Role-based Interaction",
+      "Resource Sharing",
+      "Real-time Updates",
+      "Community Forums",
+    ],
+    github: "https://github.com/krishankshh",
+    demo: "#",
+    image: "/images/chronicle.png",
+    status: "Completed",
+    year: "2023",
+    featured: false
+  },
+  {
+    title: "Google Search improvisation",
+    description: "A classic improvisation to the current Startup Page of any browser with custom search logic.",
+    longDescription: "A custom implementation of a browser startup page and search engine interface, focusing on speed, clean aesthetics, and personalized navigation.",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    features: [
+      "Custom Search Integration",
+      "Minimalist Interface",
+      "Quick Navigation Links",
+      "Personalized Dashboard",
+    ],
+    github: "https://github.com/krishankshh",
+    demo: "https://browser.kmats.in/",
+    image: "/images/search.png",
+    status: "Completed",
+    year: "2023",
+    featured: false
+  }
 ];
+
 
 export const NAVIGATION_ITEMS = [
   { name: "Home", href: "#home" },
